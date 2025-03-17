@@ -1,0 +1,28 @@
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove default margin from the top to account for the fixed navbar */
+.home-container > div:first-child {
+  margin-top: 72px; /* Same as navbar height */
+}
+
+/* Ensure text is readable on the background image */
+.home-container .bg-transparent {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.home-container h1 {
+  color: #2F855A; /* Green color matching the navbar */
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.home-container p {
+  color: #4A5568;
+  font-size: 1.25rem;
+}
+
