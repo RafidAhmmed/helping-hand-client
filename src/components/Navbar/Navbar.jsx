@@ -28,7 +28,7 @@ const Navbar = () => {
           >
             Join Us
           </span>
-          <Link to="/donate" className="font-bold text-red-500 hover:scale-110 hover:text-red-700 hover:cursor-pointer transition duration-300 hover:font-bold">Donate</Link>
+          <Link to="/donation" className="font-bold text-red-500 hover:scale-110 hover:text-red-700 hover:cursor-pointer transition duration-300 hover:font-bold">Donate</Link>
         </div>
       </div>
 

@@ -56,16 +56,16 @@ const Home = () => {
         <h1 className="font-bold text-xl md:text-3xl">Latest News</h1>
         <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 pb-6 md:pb-10">
           {[
-            { img: '/Photo/flood1.png', title: '1st news' },
-            { img: '/Photo/flood3.webp', title: '2nd news' },
-            { img: '/Photo/gaza.jpg', title: '3rd news' }
+            { img: '/Photo/gaza.jpg', title: 'Emergency Relief: Gaza Crisis Response' },
+            { img: '/Photo/flood1.png', title: 'Flood Relief Efforts in Bangladesh' },
+            { img: '/Photo/flood3.webp', title: 'Community Support Initiative Launched' }
           ].map((news, index) => (
             <div key={index} className="relative h-[400px] md:h-[500px] w-full rounded-xl border border-transparent shadow-lg pb-20 hover:scale-105 transition duration-500 cursor-pointer">
               <img src={news.img} alt={news.title} className="h-[200px] md:h-[300px] w-full rounded-t-xl rounded-b-none object-cover" />
               <p className="text-center font-bold text-xl md:text-3xl p-5">{news.title}</p>
-              <Link to="/news" className="bg-transparent rounded-full p-1 md:p-2 px-2 md:px-3 hover:bg-blue-500 hover:text-white hover:scale-105 transition duration-300 inline-block">
+              {/* <Link to="/news" className="bg-transparent rounded-full p-1 md:p-2 px-2 md:px-3 hover:bg-blue-500 hover:text-white hover:scale-105 transition duration-300 inline-block">
                 More..
-              </Link>
+              </Link> */}
             </div>
           ))}
         </div>
@@ -80,16 +80,16 @@ const Home = () => {
         <h1 className="font-bold text-xl md:text-3xl">Latest Projects</h1>
         <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 pb-6 md:pb-10">
           {[
-            { img: '/Photo/gaza.jpg', title: '1st Project' },
-            { img: '/Photo/flood1.png', title: '2nd Project' },
-            { img: '/Photo/flood3.webp', title: '3rd Project' }
+            { img: '/Photo/gaza.jpg', title: 'Gaza Humanitarian Aid Project' },
+            { img: '/Photo/flood1.png', title: 'Bangladesh Flood Recovery' },
+            { img: '/Photo/flood3.webp', title: 'Clean Water Initiative' }
           ].map((project, index) => (
             <div key={index} className="relative h-[400px] md:h-[500px] w-full rounded-xl border border-transparent shadow-lg pb-20 hover:scale-105 transition duration-700 cursor-pointer bg-white">
               <img src={project.img} alt={project.title} className="h-[200px] md:h-[300px] w-full rounded-t-xl rounded-b-none object-cover" />
               <p className="text-center font-bold text-xl md:text-3xl p-5">{project.title}</p>
-              <Link to="/projects" className="bg-transparent rounded-full p-1 md:p-2 px-2 md:px-3 hover:bg-blue-500 hover:text-white hover:scale-105 transition duration-300 inline-block">
+              {/* <Link to="/projects" className="bg-transparent rounded-full p-1 md:p-2 px-2 md:px-3 hover:bg-blue-500 hover:text-white hover:scale-105 transition duration-300 inline-block">
                 More..
-              </Link>
+              </Link> */}
             </div>
           ))}
         </div>

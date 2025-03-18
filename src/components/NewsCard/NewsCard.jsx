@@ -9,9 +9,6 @@ const NewsCard = ({ id, image, title }) => {
         alt={title} 
         className="h-[200px] md:h-[300px] w-full rounded-t-xl rounded-b-none object-cover"
       />
-      {/* <div className="absolute top-2 right-2 bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-        {index + 1}
-      </div> */}
       <p className="text-center font-bold text-xl md:text-3xl p-5">{title}</p>
       <NavLink to={`/news/${id}`} className="bg-transparent rounded-full p-1 md:p-2 px-2 md:px-3 hover:bg-blue-500 hover:text-white hover:scale-105 transition duration-300 inline-block"> 
         More.. 
