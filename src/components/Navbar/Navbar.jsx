@@ -1,11 +1,28 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import RegisterModal from '../Auth/RegisterModal';
+import RegisterModal from '../auth/RegisterModal';
+import LoginModal from '../auth/LoginModal';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
 
 const Navbar = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const isVisible = useScrollDirection();
+
+  const handleOpenRegisterModal = () => {
+    setIsRegisterModalOpen(true);
+    setIsLoginModalOpen(false);
+  };
+
+  const handleOpenLoginModal = () => {
+    setIsLoginModalOpen(true);
+    setIsRegisterModalOpen(false);
+  };
+
+  const handleCloseModals = () => {
+    setIsRegisterModalOpen(false);
+    setIsLoginModalOpen(false);
+  };
 
   return (
     <>
@@ -23,7 +40,7 @@ const Navbar = () => {
           <Link to="/gallery" className="hover:scale-110 hover:text-green-700 hover:cursor-pointer transition duration-300 hover:font-bold">Gallery</Link>
           <Link to="/about" className="hover:scale-110 hover:text-green-700 hover:cursor-pointer transition duration-300 hover:font-bold">About Us</Link>
           <span 
-            onClick={() => setIsModalOpen(true)} 
+            onClick={handleOpenRegisterModal} 
             className="text-green-600 hover:scale-110 hover:text-green-700 hover:cursor-pointer transition duration-300 hover:font-bold"
           >
             Join Us
@@ -33,7 +50,18 @@ const Navbar = () => {
       </div>
 
       {/* Registration Modal */}
-      <RegisterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <RegisterModal 
+        isOpen={isRegisterModalOpen}
+        onClose={handleCloseModals}
+        onSwitchToLogin={handleOpenLoginModal}
+      />
+
+      {/* Login Modal */}
+      <LoginModal 
+        isOpen={isLoginModalOpen}
+        onClose={handleCloseModals}
+        onSwitchToRegister={handleOpenRegisterModal}
+      />
 
       {/* Back To Top Button */}
       <div className="fixed float-left bottom-4 right-4">
@@ -50,21 +78,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// This file is already properly set up to be rendered
-// It's being imported and rendered through App.jsx which is rendered in main.jsx
-
-// If you want to test this component, make sure your App.jsx imports and uses it like:
-
-
-// import Navbar from './components/Navbar/Navbar'
-
-// function App() {
-//   return (
-//     <>
-//       <Navbar />
-//       {/* Your other components */}
-//     </>
-//   )
-// }
-

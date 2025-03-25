@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const RegisterModal = ({ isOpen, onClose }) => {
+const RegisterModal = ({ isOpen, onClose, onSwitchToLogin }) => {
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -115,10 +115,20 @@ const RegisterModal = ({ isOpen, onClose }) => {
           </div>
           <button 
             type="submit" 
-            className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition duration-200"
+            className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition duration-200 mb-4"
           >
             Register
           </button>
+          <p className="text-center text-sm text-gray-600">
+            Already have an account?{' '}
+            <button
+              type="button"
+              onClick={onSwitchToLogin}
+              className="text-green-600 hover:text-green-700 font-medium"
+            >
+              Login here
+            </button>
+          </p>
         </form>
       </div>
     </div>
@@ -127,7 +137,8 @@ const RegisterModal = ({ isOpen, onClose }) => {
 
 RegisterModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
+  onSwitchToLogin: PropTypes.func.isRequired
 };
 
 export default RegisterModal; 
